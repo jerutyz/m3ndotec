@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  empresa: MyString
+  fecha: MyString
+  horas: MyString
+  detalle: MyText
+
+two:
+  nombre: MyString
+  empresa: MyString
+  fecha: MyString
+  horas: MyString
+  detalle: MyText
