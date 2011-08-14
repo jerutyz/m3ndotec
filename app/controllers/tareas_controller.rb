@@ -2,7 +2,7 @@ class TareasController < ApplicationController
   # GET /tareas
   # GET /tareas.xml
   def index
-    @tareas = Tarea.all
+    @tareas = Tarea.paginate(:page => params[:page], :per_page => 3).order('fecha DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +25,7 @@ class TareasController < ApplicationController
   # GET /tareas/new.xml
   def new
     @tarea = Tarea.new
+    @empresas = Empresa.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -74,7 +75,6 @@ class TareasController < ApplicationController
   def destroy
     @tarea = Tarea.find(params[:id])
     @tarea.destroy
-
     respond_to do |format|
       format.html { redirect_to(tareas_url) }
       format.xml  { head :ok }

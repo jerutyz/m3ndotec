@@ -1,0 +1,38 @@
+<h1>Lista de empresas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Telefono</th>
+    <th>Detalle</th>
+    <th>Contacto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @empresas.each do |empresa| %>
+  <tr>
+    <td><%= empresa.nombre %></td>
+    <td><%= empresa.telefono %></td>
+    <td><%= empresa.detalle %></td>
+    <td><%= empresa.contacto %></td>
+    <td><%= link_to 'Ver', empresa %></td>
+    <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+    <td><%= link_to 'Borrar', empresa, :confirm => '¿Seguro?!!!', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+<div class="apple_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @empresas, :container => false %>
+  </div>
+<%= link_to 'Nueva Empresa', new_empresa_path %>
+<%= link_to 'Nueva Tarea', new_tarea_path %>

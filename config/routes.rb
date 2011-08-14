@@ -1,5 +1,9 @@
 Mendotec::Application.routes.draw do
+  resources :empresas
+
   resources :tareas
+
+  root :to => "tareas#index" 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

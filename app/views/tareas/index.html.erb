@@ -1,4 +1,4 @@
-<h1>Listing tareas</h1>
+<h1>Lista de tareas</h1>
 
 <table>
   <tr>
@@ -16,16 +16,25 @@
   <tr>
     <td><%= tarea.nombre %></td>
     <td><%= tarea.empresa %></td>
-    <td><%= tarea.fecha %></td>
+    <td><%= l(tarea.fecha) if tarea.fecha %></td>
     <td><%= tarea.horas %></td>
     <td><%= tarea.detalle %></td>
-    <td><%= link_to 'Show', tarea %></td>
-    <td><%= link_to 'Edit', edit_tarea_path(tarea) %></td>
-    <td><%= link_to 'Destroy', tarea, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', tarea %></td>
+    <td><%= link_to 'Editar', edit_tarea_path(tarea) %></td>
+    <td><%= link_to 'Borrar', tarea, :confirm => '¿Seguro?!!!', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tarea', new_tarea_path %>
+
+<div class="apple_pagination">
+    <div (clas="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @tareas, :container => false %>
+  </div>
+<%= link_to 'Nueva Tarea', new_tarea_path %>
+<%= link_to 'Nueva Empresa', new_empresa_path %>
+

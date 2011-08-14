@@ -16,12 +16,13 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :empresa %><br />
-    <%= f.text_field :empresa %>
+    
+    <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
   </div>
   <div class="field">
     <%= f.label :fecha %><br />
-    <%= f.text_field :fecha %>
+    <%= f.date_select :fecha %>
+  <!--  <input type="date" value="" /> <br /> -->
   </div>
   <div class="field">
     <%= f.label :horas %><br />
