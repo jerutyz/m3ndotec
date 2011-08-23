@@ -12,20 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br />
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    
-    <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
+  Encargado
+  <%=select_tag 'tarea[encargado_id]', options_from_collection_for_select(@encargados, "id","nombre")%>
   </div>
   <div class="field">
-    <%= f.label :fecha %><br />
+    Empresa
+    <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :fecha %>
     <%= f.date_select :fecha %>
   <!--  <input type="date" value="" /> <br /> -->
   </div>
   <div class="field">
-    <%= f.label :horas %><br />
+    <%= f.label :horas %>
     <%= f.text_field :horas %>
   </div>
   <div class="field">

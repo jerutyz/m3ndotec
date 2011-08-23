@@ -1,4 +1,6 @@
 Mendotec::Application.routes.draw do
+  resources :encargados
+
   resources :empresas
 
   resources :tareas

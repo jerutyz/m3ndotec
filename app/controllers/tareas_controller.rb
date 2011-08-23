@@ -26,6 +26,7 @@ class TareasController < ApplicationController
   def new
     @tarea = Tarea.new
     @empresas = Empresa.all
+    @encargados = Encargado.all
 
     respond_to do |format|
       format.html # new.html.erb

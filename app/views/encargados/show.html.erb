@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @encargado.nombre %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @encargado.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_encargado_path(@encargado) %> |
+<%= link_to 'Back', encargados_path %>

@@ -1,0 +1,2 @@
+module EncargadosHelper
+end
