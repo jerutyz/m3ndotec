@@ -7,19 +7,19 @@
     <th>Fecha</th>
     <th>Horas</th>
     <th>Detalle</th>
-    <th>Encargado</th>
     <th></th>
     <th></th>
+    <th></th>
+  
   </tr>
-
 <% @tareas.each do |tarea| %>
   <tr>
+
     <td><%= tarea.nombre %></td>
     <td><%= tarea.empresa %></td>
     <td><%= l(tarea.fecha) if tarea.fecha %></td>
     <td><%= tarea.horas %></td>
     <td><%= truncate tarea.detalle, :length =>25 %></td>
-    <td><%= tarea.encargado_id %></td>
     <td><%= link_to 'Ver', tarea %></td>
     <td><%= link_to 'Editar', edit_tarea_path(tarea) %></td>
     <td><%= link_to 'Borrar', tarea, :confirm => '¿Seguro?!!!', :method => :delete %></td>

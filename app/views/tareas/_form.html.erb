@@ -12,17 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %>
+    <%= f.label :nombre %> de la tarea
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
   Encargado
   <%=select_tag 'tarea[encargado_id]', options_from_collection_for_select(@encargados, "id","nombre")%>
+  <%= link_to 'Nuevo Encargado', new_encargado_path %>
   </div>
   <div class="field">
     Empresa
     <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
+    <%= link_to 'Nueva Empresa', new_empresa_path %>
   </div>
+<div class="field">
+<%= f.label :estado %>
+<select name="tareas[estado]">
+  <option value="">A presupuestar</option>
+  <option value="1">Presupuestado</option>
+  <option value="2" selected="selected">A facturar</option>
+  <option value="3">Facturado</option>
+</select>
+</div>  
+
   
   <div class="field">
     <%= f.label :fecha %>
