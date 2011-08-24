@@ -1,4 +1,20 @@
-<h1>Lista de tareasss!!</h1>
+<h1>Lista de tarea!</h1>
+
+<% form_tag request.path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
 
 <table>
   <tr>

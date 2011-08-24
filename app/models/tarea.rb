@@ -7,6 +7,12 @@ class Tarea < ActiveRecord::Base
   #has_one :empresa
   #validates :fecha,
  #   :date => true {:after => Time.now, :before => Time.now + 1.year}
+def self.search(search, page)
+  paginate :per_page => 1, :page => page,
+           :conditions => ['name like ?', "%#{search}%"], :order => 'name'
+end
+
+
 end
 
  

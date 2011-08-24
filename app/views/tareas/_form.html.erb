@@ -16,10 +16,14 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
+  <p>
   Encargado
+  
   <%=select_tag 'tarea[encargado_id]', options_from_collection_for_select(@encargados, "id","nombre")%>
   <%= link_to 'Nuevo Encargado', new_encargado_path %>
+  </p>
   </div>
+  
   <div class="field">
     Empresa
     <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
