@@ -5,10 +5,32 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  
 </head>
-<body>
+<body id="tarea">
 
-<%= yield %>
+<div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Sistema" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+
+<div id="columns">
+      <% if session[:user_id] %>
+        <br />
+        
+        <%= link_to 'Tareas',   tareas_path   %><br />
+        <%= link_to 'Empresas', empresas_path %><br />
+        <%= link_to 'Encargados',    users_path    %><br />
+        <%= link_to 'Contactos' , contactos_path %> <br />
+        <br />
+        <%= button_to 'Logout', logout_path, :method => :delete   %>
+      <% end %>
+<!-- END_HIGHLIGHT -->
+</div>
+
+<div id="main">
+      <%= yield %>
+</div>
 
 </body>
 </html>

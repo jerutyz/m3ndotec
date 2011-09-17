@@ -1,0 +1,39 @@
+<%= form_for(@contacto) do |f| %>
+  <% if @contacto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+
+      <ul>
+      <% @contacto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    Empresa
+    <%= select_tag 'contacto[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre",1) %> 
+    <%= link_to 'Nueva Empresa', new_empresa_path %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br />
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br />
+    <%= f.text_area :comentario , :rows => 6 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

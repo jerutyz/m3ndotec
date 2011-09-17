@@ -1,17 +1,5 @@
 <h1>Lista de tarea!</h1>
 
-<% form_tag request.path, :method => 'get' do %>
-  <% content_tag :label do %>
-    Search term:
-    <%= text_field_tag :search, params[:search] %>
-  <% end %>
-<% end %>
-
-
-
-
-
-
 
 
 
@@ -22,6 +10,7 @@
     <th>Empresa</th>
     <th>Fecha</th>
     <th>Horas</th>
+    <th>Encargado</th>
     <th>Detalle</th>
     <th></th>
     <th></th>
@@ -35,6 +24,7 @@
     <td><%= tarea.empresa %></td>
     <td><%= l(tarea.fecha) if tarea.fecha %></td>
     <td><%= tarea.horas %></td>
+    <td><%= tarea.user_id %></td>
     <td><%= truncate tarea.detalle, :length =>25 %></td>
     <td><%= link_to 'Ver', tarea %></td>
     <td><%= link_to 'Editar', edit_tarea_path(tarea) %></td>
@@ -52,6 +42,8 @@
     </div>
     <%= will_paginate @tareas, :container => false %>
   </div>
+
+  
 <%= link_to 'Nueva Tarea', new_tarea_path %>
-<%= link_to 'Nueva Empresa', new_empresa_path %>
+
 

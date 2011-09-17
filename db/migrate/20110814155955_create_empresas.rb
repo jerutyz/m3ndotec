@@ -5,7 +5,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :nombre
       t.string :telefono
       t.text :detalle
-      t.string :contacto
+      #t.string :contacto
 
       t.timestamps
     end

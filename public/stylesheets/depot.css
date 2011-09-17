@@ -1,0 +1,94 @@
+#banner {
+ position:relative;
+  background: #9c9;
+
+  padding-top: 15px;
+  padding-bottom: 45px;
+  border-bottom: 2px solid;
+  font: small-caps 60px/60px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+#banner img {
+ float: left;
+  
+}
+
+#main{
+ float:left;
+ 
+ 
+ right:600;
+ width:1000px;
+
+
+  padding-top: 0ex;
+  padding-left: 0em;
+  background: white;
+}
+#columns {
+   height: 500px;
+
+float:left;
+
+ top:20;
+ left:0;
+ width:150px;
+  background: #142  
+ 
+}
+
+#tarea h1 {
+        font:  150% sans-serif;
+        color: #226;
+        border-bottom: 3px dotted #77d;
+}
+
+
+
+/* An entry in the tarea catalog */
+
+#tarea  .entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+}
+
+#tarea  .title {
+  font-size: 120%;
+  font-family: sans-serif;
+}
+
+#tarea .entry img {
+  width: 80px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+
+#tarea .entry h3 {
+ margin-top: 0;
+ margin-bottom: 2px;
+ color: #227;
+}
+
+#tarea .entry p {
+ margin-top: 0.5em; 
+ margin-bottom: 0.8em; 
+}
+
+#tarea .entry .price_line {
+ clear: both;
+ margin-bottom: 0.5em;
+}
+
+#tarea .entry .add_to_cart {
+  position: relative;
+}
+
+#tarea .entry  .price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 2em;
+}

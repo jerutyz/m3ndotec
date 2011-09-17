@@ -1,0 +1,40 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Contactos</h1>
+
+
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Empresa</th>
+    <th>Telefono</th>
+    <th>Celular</th>
+    <th>Comentario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contactos.each do |contacto| %>
+
+  <tr>
+    <td><%= contacto.nombre %></td>
+    <td><%= contacto.empresa %></td>
+    <td><%= contacto.telefono %></td>
+    <td><%= contacto.celular %></td>
+    <td><%= contacto.comentario %></td>
+    <td><%= link_to 'Show', contacto %></td>
+    <td><%= link_to 'Edit', edit_contacto_path(contacto) %></td>
+    <td><%= link_to 'Destroy', contacto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+<%= link_to 'Nuevo Contacto', new_contacto_path %>

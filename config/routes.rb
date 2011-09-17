@@ -1,4 +1,27 @@
 Mendotec::Application.routes.draw do
+  resources :contactos
+
+  #agregado
+  get 'admin' => 'admin#index'
+controller :sessions do
+get 'login' => :new
+post 'login' => :create
+delete 'logout' => :destroy
+end
+
+
+#viejo
+
+  get "admin/index"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  resources :users
+
   resources :encargados
 
   resources :empresas
@@ -6,6 +29,13 @@ Mendotec::Application.routes.draw do
   resources :tareas
 
   root :to => "tareas#index" 
+ 
+ #agregado
+  get "store/index"
+resources :products do
+get :who_bought, :on => :member
+end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,6 +89,7 @@ Mendotec::Application.routes.draw do
   # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
+root :to => 'store#index', :as => 'store'
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

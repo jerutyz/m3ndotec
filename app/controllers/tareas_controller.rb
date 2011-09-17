@@ -1,8 +1,13 @@
 class TareasController < ApplicationController
+ 
+ #autorizacion
+ 
+ #before_filter :authorize
+
   # GET /tareas
   # GET /tareas.xml
   def index
-    @tareas = Tarea.paginate(:page => params[:page], :per_page => 3).order('fecha DESC')
+    @tareas = Tarea.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +31,7 @@ class TareasController < ApplicationController
   def new
     @tarea = Tarea.new
     @empresas = Empresa.all
-    @encargados = Encargado.all
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,12 +42,19 @@ class TareasController < ApplicationController
   # GET /tareas/1/edit
   def edit
     @tarea = Tarea.find(params[:id])
+    @empresas = Empresa.all
+   
+    @users = User.all
   end
 
   # POST /tareas
   # POST /tareas.xml
   def create
     @tarea = Tarea.new(params[:tarea])
+
+    @empresas = Empresa.all
+   
+    @users = User.all
 
     respond_to do |format|
       if @tarea.save
@@ -59,6 +71,9 @@ class TareasController < ApplicationController
   # PUT /tareas/1.xml
   def update
     @tarea = Tarea.find(params[:id])
+    @empresas = Empresa.all
+   
+    @users = User.all
 
     respond_to do |format|
       if @tarea.update_attributes(params[:tarea])

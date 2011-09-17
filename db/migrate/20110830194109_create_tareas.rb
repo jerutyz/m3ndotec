@@ -1,9 +1,9 @@
 class CreateTareas < ActiveRecord::Migration
   def self.up
-#    drop_table :tareas
+   #drop_table :tareas
     create_table :tareas do |t|
       t.references :empresa
-      t.references :encargado
+      t.references :user
       t.string :nombre
       t.string :estado
       t.date :fecha

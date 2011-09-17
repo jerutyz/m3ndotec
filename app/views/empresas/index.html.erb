@@ -5,7 +5,6 @@
     <th>Empresa</th>
     <th>Telefono</th>
     <th>Detalle</th>
-    <th>Contacto</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,7 +15,6 @@
     <td><%= empresa.nombre %></td>
     <td><%= empresa.telefono %></td>
     <td><%= empresa.detalle %></td>
-    <td><%= empresa.contacto %></td>
     <td><%= link_to 'Ver', empresa %></td>
     <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
     <td><%= link_to 'Borrar', empresa, :confirm => '¿Seguro?!!!', :method => :delete %></td>
@@ -35,4 +33,4 @@
     <%= will_paginate @empresas, :container => false %>
   </div>
 <%= link_to 'Nueva Empresa', new_empresa_path %>
-<%= link_to 'Nueva Tarea', new_tarea_path %>
+

@@ -18,21 +18,20 @@
   <div class="field">
   <p>
   Encargado
-  
-  <%=select_tag 'tarea[encargado_id]', options_from_collection_for_select(@encargados, "id","nombre")%>
-  <%= link_to 'Nuevo Encargado', new_encargado_path %>
+    <%= select_tag 'tarea[user_id]', options_from_collection_for_select(@users, "id","name",1) %>
+  <%= link_to 'Nuevo Encargado', new_user_path %>
   </p>
   </div>
   
   <div class="field">
     Empresa
-    <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre") %> 
+    <%= select_tag 'tarea[empresa_id]', options_from_collection_for_select(@empresas, "id", "nombre",1) %> 
     <%= link_to 'Nueva Empresa', new_empresa_path %>
   </div>
 <div class="field">
 <%= f.label :estado %>
-<select name="tareas[estado]">
-  <option value="">A presupuestar</option>
+<select name="tarea[estado]">
+  <option value="0">A presupuestar</option>
   <option value="1">Presupuestado</option>
   <option value="2" selected="selected">A facturar</option>
   <option value="3">Facturado</option>
@@ -51,7 +50,7 @@
   </div>
   <div class="field">
     <%= f.label :detalle %><br />
-    <%= f.text_area :detalle %>
+    <%= f.text_area :detalle,  :rows => 6 %>
   </div>
   <div class="actions">
     <%= f.submit %>
