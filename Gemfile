@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 gem 'date_validator'
-gem 'will_paginate', '~> 3.0.0'
+gem 'will_paginate'
 gem 'validates_timeliness'
 
 gem 'jquery-rails'

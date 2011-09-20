@@ -9,8 +9,10 @@ class ContactosController < ApplicationController
   def index
     
 #@Contacots = Contacto.where(conditions).includes(:firm, :car).search(params[:search], params[:page]).paginate :page => params[:page], :order => (sort_column + " " + sort_direction)
-    @contactos = Contacto.all
+#    @contactos = Contacto.all
    # @contactos = Contacto.paginate(:page => params[:page], :per_page => 6).order('nombre DESC')
+
+	 @contactos = Contacto.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

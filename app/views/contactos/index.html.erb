@@ -3,8 +3,16 @@
 <% end %>
 
 <h1>Contactos</h1>
+<div id="buscar">
+<%= form_tag contactos_path, :method => 'get' do %>
+  <p>
+ 
 
-
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscar", :nombre => nil %>
+  </p>
+<% end %>
+</div>
 
 <table>
   <tr>
@@ -26,9 +34,9 @@
     <td><%= contacto.telefono %></td>
     <td><%= contacto.celular %></td>
     <td><%= contacto.comentario %></td>
-    <td><%= link_to 'Show', contacto %></td>
-    <td><%= link_to 'Edit', edit_contacto_path(contacto) %></td>
-    <td><%= link_to 'Destroy', contacto, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', contacto %></td>
+    <td><%= link_to 'Editar', edit_contacto_path(contacto) %></td>
+    <td><%= link_to 'Borrar', contacto, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

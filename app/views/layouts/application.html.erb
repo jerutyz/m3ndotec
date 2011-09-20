@@ -17,13 +17,14 @@
 <div id="columns">
       <% if session[:user_id] %>
         <br />
-        
+        <div id="side">
         <%= link_to 'Tareas',   tareas_path   %><br />
         <%= link_to 'Empresas', empresas_path %><br />
         <%= link_to 'Encargados',    users_path    %><br />
         <%= link_to 'Contactos' , contactos_path %> <br />
         <br />
-        <%= button_to 'Logout', logout_path, :method => :delete   %>
+        <%= button_to 'Salir', logout_path, :method => :delete   %>
+      </div>
       <% end %>
 <!-- END_HIGHLIGHT -->
 </div>

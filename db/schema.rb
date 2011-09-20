@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20110910175111) do
     t.string   "nombre"
     t.string   "telefono"
     t.text     "detalle"
-    t.string   "contacto"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

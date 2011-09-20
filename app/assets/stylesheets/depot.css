@@ -16,18 +16,17 @@
 
 #main{
  float:left;
- 
- 
  right:600;
  width:1000px;
-
-
   padding-top: 0ex;
-  padding-left: 0em;
+  padding-left: 5em;
   background: white;
 }
+#buscar {
+float: right;
+}
 #columns {
-   height: 500px;
+   height: 650px;
 
 float:left;
 
@@ -36,6 +35,18 @@ float:left;
  width:150px;
   background: #142  
  
+}
+#side {
+  float:left;
+  padding-top: 1em;
+  padding-left: 1em;
+  width: 12em;
+  background: #141;
+   width:130px;
+}
+#side a {
+  color: #bfb;
+  font-size: small;
 }
 
 #tarea h1 {

@@ -7,7 +7,7 @@ class TareasController < ApplicationController
   # GET /tareas
   # GET /tareas.xml
   def index
-    @tareas = Tarea.paginate(:page => params[:page], :per_page => 8).order('created_at DESC')
+    @tareas = Tarea.paginate(:page => params[:page], :per_page => 8).order('updated_at DESC')
    # @tareas = Tarea.order("nombre").page(params[:page]).per(5)
     respond_to do |format|
       format.html # index.html.erb
